@@ -39,27 +39,41 @@ class cheader extends cnode {
 		$echo_str = <<< END_BLOCK
 
 <!doctype html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PHPBase2サンプル</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
+	<html lang="ja">
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<title>聖地巡礼サイト</title>
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+			<link rel="stylesheet" type="text/css" href="css/style.css">
+		</head>
+		<body>
 <!-- 全体コンテナ　-->
-<div class="container">
-<header class="d-flex justify-content-center py-3 border-dark border-bottom">
-<ul class="nav nav-pills">
-<li class="nav-item"><a href="index.php" class="nav-link link-success">メインメニュー</a></li>
-<li class="nav-item"><a href="prefecture_list.php" class="nav-link link-success">都道府県管理</a></li>
-<li class="nav-item"><a href="member_list.php" class="nav-link link-success">メンバー管理</a></li>
-<li class="nav-item"><a href="member_list_custom.php" class="nav-link link-success">メンバー管理（カスタムノード）</a></li>
-<li class="nav-item"><a href="hinagata.php" class="nav-link link-success">雛形ファイル</a></li>
-<li class="nav-item"><a href="hinagata2.php" class="nav-link link-success">雛形ファイル（サイドバー付き）</a></li>
-</ul>
-</header>
+		<div class="container-fluid p-0 m-0">
+  			<header class="py-3 border-dark border-bottom custom-header">
+   				<div class="MainHeader">
+					<div class="SiteIcon">
+        			<a href="index.php"><img src="images/Sanba.png" alt="サイトアイコン"></a>
+    				</div>
+				<div class="Right_tume">
+ 					<form class="search-form" action="検索先URL" method="get">
+    					<button type="submit" class="btn btn-light search-button">
+    						<img src="images/Musimegane.png" alt="検索" width="20" height="20">
+						</button>
+    					<input type="text" class="form-control search-box" name="q" placeholder="検索">
+ 					</form>
+ 				<a href="User_top.php"><img src="images/Guest_User.png" alt="ユーザー情報" class="user-icon"></a>
+				</div>
+			</div>
+		</header>
+		</div>
+		<div class="HeaderButton">
+				<li class="nav-item"><a href="index.php" class="nav-link link-success">今月の人気</a></li>
+				<li class="nav-item"><a href="index.php" class="nav-link link-success">人気の聖地</a></li>
+				<li class="nav-item"><a href="index.php" class="nav-link link-success">今話題のアニメ</a></li>
+				<li class="nav-item"><a href="index.php" class="nav-link link-success">今年のアニメ</a></li>
+		</div>
+	</body>
 END_BLOCK;
 		echo $echo_str;
 	}
@@ -126,13 +140,13 @@ class cside_header extends cnode {
 				<li class="nav-item">
 					<a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="index.php">
 						<span class="bi"></span>
-						メインメニュー
+						トップページ
 					</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link d-flex align-items-center gap-2" href="prefecture_list.php">
+				<li class="nav-item">ジ
+					<a class="nav-link d-flex align-items-center gap-2" href="User_top.php">
 						<span class="bi"></span>
-						都道府県管理
+						ユーザー情報
 					</a>
 				</li>
 				<li class="nav-item">
@@ -209,8 +223,8 @@ class cfooter extends cnode {
 	public function display(){
 		$echo_str = <<< END_BLOCK
 
-<footer class="py-3 my-4 border-dark border-top">
-<p class="text-center text-body-secondary">&copy; 2024 PHPBase2</p>
+<footer class="py-3 border-dark border-top">
+<p class="text-end text-body-secondary me-3">&copy; LAMP開発</p>
 </footer>
 </div>
 <!-- /全体コンテナ　-->

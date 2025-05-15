@@ -1,6 +1,6 @@
 <?php
 /*!
-@file index.php
+@file Login.php
 @brief メインメニュー
 @copyright Copyright (c) 2024 Yamanoi Yasushi.
 */
@@ -42,34 +42,7 @@ class cmain_node extends cnode {
 
 <!-- コンテンツ　-->
 
-<div class="PageText">
-	<h5>最近話題の聖地</h5>
-</div>
-<div class="image-row">
-  <div class="image-item">
-    <img src="images/place/Sample1.png" alt="画像1">
-    <p class="caption">みてください。おれです。</p>
-  </div>
-  <div class="image-item">
-    <img src="images/place/Sample2.png" alt="画像2">
-    <p class="caption">おれです。</p>
-  </div>
-  <div class="image-item">
-    <img src="images/place/Sample3.png" alt="画像3">
-    <p class="caption">推しとのツーショット</p>
-  </div>
-</div>
-<div class="PageText">
-	<h5>ページ一覧</h5>
-</div>
-
-	<div class="contents border-bottom text-center">
-  <ul class="custom-list">
-    <li><a href="prefecture_list.php" class="nav-link">当サイトについて</a></li>
-    <li><a href="member_list.php" class="nav-link">聖地人気ランキング</a></li>
-  </ul>
-</div>
-
+<h5>ここにログインのうんたらかんたらを書いてね</h5>
 
 <!-- /コンテンツ　-->
 END_BLOCK;
@@ -89,8 +62,6 @@ END_BLOCK;
 
 //ページを作成
 $page_obj = new cnode();
-//ヘッダ追加
-$page_obj->add_child(cutil::create('cheader'));
 //本体追加
 $page_obj->add_child(cutil::create('cmain_node'));
 //フッタ追加

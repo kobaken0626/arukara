@@ -1,6 +1,6 @@
 <?php
 /*!
-@file index.php
+@file User_top.php
 @brief メインメニュー
 @copyright Copyright (c) 2024 Yamanoi Yasushi.
 */
@@ -42,35 +42,30 @@ class cmain_node extends cnode {
 
 <!-- コンテンツ　-->
 
-<div class="PageText">
-	<h5>最近話題の聖地</h5>
+<div class="contents">
+<link rel="stylesheet" href="css/style.css">
+<h5><strong>トップページ</strong></h5>
+<table class="table table-bordered">
+<thead>
+<tr>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="prefecture_list.php" class="nav-link link-success">ユーザー</a></td>
+</tr>
+<tr>
+<td><a href="member_list.php" class="nav-link link-success">聖地人気ランキング</a></td>
+</tr>
+<tr>
+<td><a href="member_list_custom.php" class="nav-link link-success">メンバー管理（カスタムノード）</a></td>
+</tr>
+<tr>
+<td><a href="hinagata.php" class="nav-link link-success">雛形ファイル</a></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="image-row">
-  <div class="image-item">
-    <img src="images/place/Sample1.png" alt="画像1">
-    <p class="caption">みてください。おれです。</p>
-  </div>
-  <div class="image-item">
-    <img src="images/place/Sample2.png" alt="画像2">
-    <p class="caption">おれです。</p>
-  </div>
-  <div class="image-item">
-    <img src="images/place/Sample3.png" alt="画像3">
-    <p class="caption">推しとのツーショット</p>
-  </div>
-</div>
-<div class="PageText">
-	<h5>ページ一覧</h5>
-</div>
-
-	<div class="contents border-bottom text-center">
-  <ul class="custom-list">
-    <li><a href="prefecture_list.php" class="nav-link">当サイトについて</a></li>
-    <li><a href="member_list.php" class="nav-link">聖地人気ランキング</a></li>
-  </ul>
-</div>
-
-
 <!-- /コンテンツ　-->
 END_BLOCK;
 		echo $echo_str;

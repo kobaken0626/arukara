@@ -66,4 +66,191 @@
     border: 1px solid rgba(0,0,0,0.7);
 }
 
+.custom-header {
+    background-color: #8dffd3; /* 水色に変更 */
+}
 
+div.PageText h5{
+  text-align: center;
+  font-size: 60px;
+}
+
+div.Right_tume{
+  font-size: 50px;
+  padding-right: 5px;
+  justify-content: start;
+  display: flex;
+}
+
+.HeaderButton {
+  display: flex;
+  justify-content: center;           /* ← これが中央揃えのポイント */
+  background-color: hsl(159, 100%, 86%);
+  font-size: 25px;
+  list-style: none;
+  margin: 0 auto;                    /* 追加: autoで中央寄せサポート */
+  padding: 5px 0px;
+  font-size: 30px;
+}
+
+
+.HeaderButton li {
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* 各要素の間に縦線を表示 */
+.HeaderButton li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0%;
+  height: 100%;
+  width: 1px;
+  background-color: #ffffff; /* 黒い縦線 */
+}
+
+/* リンクも中央揃えに */
+.HeaderButton li a {
+  display: block;
+  text-align: center;
+}
+
+.SiteIcon img {
+  width: auto;
+  height: auto;
+  max-width: 500px;
+}
+
+.MainHeader {
+  display: flex;
+  justify-content: space-between; /* 左右に分ける */
+  align-items: center;            /* 上下中央揃え */
+  padding: 0px 1rem;
+}
+
+.SiteIcon {
+  /* 位置を明示（左側に固定される） */
+}
+
+.Right_tume {
+  display: flex;
+  align-items: end;
+  gap: 1rem; /* 検索と画像の間にスペース */
+  font-size: 25px;
+}
+
+.user-icon {
+  width: 120px;   /* 必要に応じて数値を変更 */
+  height: auto;   /* アスペクト比を維持 */
+}
+
+
+.search-form img{
+  width: auto;
+  height: auto;
+  max-width: 50px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  background-color: #ccc; /* 条件1：灰色背景 */
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.search-box {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 5px;
+  width: 150px;
+}
+
+.search-box::placeholder {
+  color: #666; /* 条件2：薄い文字色 */
+}
+
+.search-button {
+  border: none;
+  background: none;
+  padding: 0 5px;
+}
+
+.HeaderButton {
+  background-color: #5effe4;
+  margin-bottom: 30px; /* ヘッダーの下に余白 */
+}
+
+
+/*
+  Index.php
+*/
+
+div.PageText {
+  text-align: center; /* 中央揃えにする */
+}
+
+div.PageText h5 {
+  font-size: 60px;
+  display: inline-block;         /* テキスト幅だけ下線を表示 */
+  border-bottom: 5px solid #000; /* 下線 */
+  padding-bottom: 10px;          /* テキストと線の間に余白 */
+}
+
+.image-row {
+  display: flex;
+  justify-content: space-between; /* 均等に間隔 */
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.image-item {
+  text-align: center;
+  flex: 1;
+  margin: 0 10px; /* 左右に余白 */
+}
+
+.image-item img {
+  width: auto; /* 親要素に合わせて横幅を100%にする */
+  max-width: 300px; /* 最大幅を指定 */
+  height: auto; /* アスペクト比を維持しつつ高さを調整 */
+}
+
+.caption {
+  font-size: 12px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.custom-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  font-size: 25px; /* ← ここを変更 */
+}
+
+
+.custom-list li {
+  margin: 5px 0;
+}
+
+.custom-list a {
+  text-decoration: none;
+  color: #198754; /* Bootstrapのlink-success色に合わせています */
+}
+
+/*
+  fotter
+*/
+footer{
+  background-color:rgb(221, 255, 129);
+}
