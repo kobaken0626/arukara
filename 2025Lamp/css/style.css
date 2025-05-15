@@ -122,7 +122,7 @@ div.Right_tume{
 .SiteIcon img {
   width: auto;
   height: auto;
-  max-width: 500px;
+  max-width: 300px;
 }
 
 .MainHeader {
@@ -192,6 +192,19 @@ div.Right_tume{
   Index.php
 */
 
+.carousel-inner img {
+  height: 500px; /* 任意の高さに調整 */
+  object-fit: cover;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #bbb; /* 非アクティブ（薄め） */
+}
+.carousel-indicators .active {
+  background-color: #ffffff; /* アクティブ（黒） */
+}
+
+
 div.PageText {
   text-align: center; /* 中央揃えにする */
 }
@@ -219,7 +232,7 @@ div.PageText h5 {
 
 .image-item img {
   width: auto; /* 親要素に合わせて横幅を100%にする */
-  max-width: 300px; /* 最大幅を指定 */
+  max-width: 450px; /* 最大幅を指定 */
   height: auto; /* アスペクト比を維持しつつ高さを調整 */
 }
 

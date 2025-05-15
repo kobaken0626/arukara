@@ -50,10 +50,10 @@ class cheader extends cnode {
 		<body>
 <!-- 全体コンテナ　-->
 		<div class="container-fluid p-0 m-0">
-  			<header class="py-3 border-dark border-bottom custom-header">
+  			<header class="py-1 border-dark border-bottom custom-header">
    				<div class="MainHeader">
 					<div class="SiteIcon">
-        			<a href="index.php"><img src="images/Sanba.png" alt="サイトアイコン"></a>
+        			<a href="index.php"><img src="images/Logo.png" alt="サイトアイコン"></a>
     				</div>
 				<div class="Right_tume">
  					<form class="search-form" action="検索先URL" method="get">
@@ -223,12 +223,15 @@ class cfooter extends cnode {
 	public function display(){
 		$echo_str = <<< END_BLOCK
 
-<footer class="py-3 border-dark border-top">
-<p class="text-end text-body-secondary me-3">&copy; LAMP開発</p>
+<footer class="py-3 border-dark border-top text-center">
+  <p class="mb-1">
+    <a href="index.php" class="text-decoration-none text-primary">トップページへ戻る</a>
+  </p>
+  <p class="text-body-secondary">&copy; LAMP開発</p>
 </footer>
+
 </div>
 <!-- /全体コンテナ　-->
-<div class="b-divider"></div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>

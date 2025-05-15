@@ -36,11 +36,47 @@ class cmain_node extends cnode {
 	*/
 	//--------------------------------------------------------------------------------------
 	public function display(){
+		$dir = 'images/place/'; //ここでディレクトリ指定
+  $images = glob($dir . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 
-		$echo_str = <<< END_BLOCK
+  // インジケーター生成
+  echo '<div id="topCarousel" class="carousel slide mb-4" data-bs-ride="carousel">';
+  echo '<div class="carousel-indicators">';
+  foreach ($images as $index => $img) {
+    $active = ($index === 0) ? 'class="active"' : '';
+    echo '<button type="button" data-bs-target="#topCarousel" data-bs-slide-to="' . $index . '" ' . $active . ' aria-label="スライド' . ($index + 1) . '"></button>';
+  }
+  echo '</div>';
 
+  // スライド画像本体
+  echo '<div class="carousel-inner">';
+  $active = 'active';
+  foreach ($images as $img) {
+    echo '<div class="carousel-item ' . $active . '">';
+    echo '<img src="' . $img . '" class="d-block w-100" alt="スライド画像">';
+    echo '</div>';
+    $active = '';
+  }
+  echo '</div>';
+
+  // 左右ナビゲーション
+  echo '<button class="carousel-control-prev" type="button" data-bs-target="#topCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">前へ</span>
+        </button>';
+  echo '<button class="carousel-control-next" type="button" data-bs-target="#topCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">次へ</span>
+        </button>';
+  echo '</div>';
+
+  $echo_str = <<< END_BLOCK
 
 <!-- コンテンツ　-->
+
+<body>
+
+$carousel_html
 
 <div class="PageText">
 	<h5>最近話題の聖地</h5>
@@ -70,7 +106,10 @@ class cmain_node extends cnode {
   </ul>
 </div>
 
+<!-- Bootstrap JS 読み込み（headの下かbodyの末尾に） -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+</body>
 <!-- /コンテンツ　-->
 END_BLOCK;
 		echo $echo_str;
