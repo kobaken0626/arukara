@@ -45,23 +45,33 @@ class cmain_node extends cnode {
 <h5><html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>ログイン画面</title>
+    <title>アカウント情報</title>
     <style>
         body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #fff; }
-        .login-box { background: #ccc; padding: 40px; text-align: center; }
+        .form-box { background: #ccc; padding: 40px; text-align: center; }
         input { display: block; margin: 10px auto; padding: 10px; width: 80%; }
+        .back-btn { position: absolute; top: 20px; left: 20px; }
         .error { color: red; }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <h2>ログイン画面</h2>
-        <?php if (!empty($error)) echo "<p class='error'>$error</p>
+    <a href="home.php" class="back-btn">← 戻る</a>
+    <div class="form-box">
+        <h2>アカウント情報</h2>
+
+        <?php if (!empty($errors)): ?>
+            <div class="error">
+                <?php foreach ($errors as $e) echo "<p>$e</p>
+            </div>
+        <?php endif; ?>
+
         <form method="POST">
+            <input type="text" name="nickname" placeholder="ニックネーム" required>
             <input type="email" name="email" placeholder="メールアドレス" required>
+            <input type="email" name="email_confirm" placeholder="確認メールアドレス" required>
             <input type="password" name="password" placeholder="password" required>
-            <p><a href="register.php">新規登録はこちら</a></p>
-            <button type="submit">ログイン</button>
+            <input type="password" name="password_confirm" placeholder="確認password" required>
+            <button type="submit">変更</button>
         </form>
     </div>
 </body>
